@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
               opacity: const AlwaysStoppedAnimation(.8),
             ),
           ),
-          ProfileContainer()
+          const ProfileContainer()
         ],
       ),
     );

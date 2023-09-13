@@ -19,7 +19,6 @@ class TextContainerWidget extends StatelessWidget {
           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         Container(
-          // height: 40,
           width: double.maxFinite,
           decoration: BoxDecoration(
             color: Colors.black.withOpacity(0.5),
