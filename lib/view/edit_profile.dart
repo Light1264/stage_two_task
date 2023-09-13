@@ -3,19 +3,40 @@ import 'package:stage_two_task/widget/app_button.dart';
 import 'package:stage_two_task/widget/edit_fields.dart';
 
 class EditCvScreen extends StatefulWidget {
-  const EditCvScreen({Key? key, required this.updateCallback})
-      : super(key: key);
+  const EditCvScreen({
+    Key? key,
+    required this.updateCallback,
+    required this.fullName,
+    required this.slackUserName,
+    required this.gitHubHandle,
+    required this.bio,
+  }) : super(key: key);
   final Function(Map<String, String>) updateCallback;
+  final String fullName;
+  final String slackUserName;
+  final String gitHubHandle;
+  final String bio;
 
   @override
   State<EditCvScreen> createState() => _EditCvScreenState();
 }
 
 class _EditCvScreenState extends State<EditCvScreen> {
-  TextEditingController fullName = TextEditingController();
-  TextEditingController slackUserName = TextEditingController();
+  late TextEditingController fullName;
+  late TextEditingController slackUserName;
   TextEditingController gitHubHandle = TextEditingController();
   TextEditingController bio = TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    fullName = TextEditingController(text: widget.fullName);
+    slackUserName = TextEditingController(text: widget.slackUserName);
+    gitHubHandle = TextEditingController(text: widget.gitHubHandle);
+    bio = TextEditingController(text: widget.bio);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +106,10 @@ class _EditCvScreenState extends State<EditCvScreen> {
                   });
                   Navigator.pop(context);
                 },
-              )
+              ),
+              const SizedBox(
+                height: 30,
+              ),
             ],
           ),
         ),

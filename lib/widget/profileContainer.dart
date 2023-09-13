@@ -89,6 +89,10 @@ class _ProfileContainerState extends State<ProfileContainer> {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => EditCvScreen(
+                        fullName: fullName,
+                        slackUserName: slackUserName,
+                        gitHubHandle: gitHubHandle,
+                        bio: bio,
                         updateCallback: (newValue) {
                           setState(() {
                             fullName = newValue["fullName"].toString().isEmpty

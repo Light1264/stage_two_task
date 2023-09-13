@@ -21,9 +21,11 @@ class EditFields extends StatelessWidget {
           style: const TextStyle(fontSize: 18),
         ),
         SizedBox(
-          height: 50,
+          // height: 50,
           width: double.infinity,
           child: TextField(
+            maxLines: 4,
+            minLines: 1,
             controller: textController,
             onChanged: onChanged,
             keyboardType: TextInputType.text,
