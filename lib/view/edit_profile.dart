@@ -75,7 +75,7 @@ class _EditCvScreenState extends State<EditCvScreen> {
                 height: 15,
               ),
               EditFields(
-                textTitle: "Slack UsserName",
+                textTitle: "Slack UserName",
                 textController: slackUserName,
               ),
               const SizedBox(
